@@ -1,0 +1,292 @@
+:root {
+  --very-dark-magenta: hsl(300, 43%, 22%);
+  --soft-pink: hsl(333, 80%, 67%);
+  --dark-grayish-magenta: hsl(303, 10%, 53%);
+  --light-grayish-magenta: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+}
+
+/* CSS Reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  /* line-height: 1.5; */
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Mobile */
+
+body {
+  background-color: var(--white);
+  font-family: "League Spartan", sans-serif;
+  font-size: calc(15 / 16 * 1rem);
+  text-align: center;
+  background-image: url("../images/bg-pattern-top-mobile.svg"),
+    url("../images/bg-pattern-bottom-mobile.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: top 0 left 0, right 0 bottom 0;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  max-width: calc(375 / 16 * 1rem);
+  padding: calc(82 / 16 * 1rem) calc(24 / 16 * 1rem) calc(100 / 16 * 1rem);
+  flex-grow: 1;
+}
+
+.testimonial__title {
+  font-size: calc(40 / 16 * 1rem);
+  letter-spacing: -1.43px;
+  line-height: calc(32 / 40);
+  color: var(--very-dark-magenta);
+}
+
+.testimonial__description {
+  margin-top: calc(17 / 16 * 1rem);
+  font-weight: 500;
+  font-size: calc(19 / 16 * 1rem);
+  line-height: calc(25 / 19);
+  letter-spacing: -0.63px;
+  color: var(--dark-grayish-magenta);
+}
+
+.review {
+  margin-top: calc(39 / 16 * 1rem);
+}
+
+.review__item {
+  background-color: var(--light-grayish-magenta);
+  margin-top: 16px;
+  border-radius: 8px;
+  padding: calc(16 / 16 * 1rem) calc(55 / 16 * 1rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15.23px;
+}
+
+.review__stars {
+  display: flex;
+  gap: 8.45px;
+}
+
+.review__rating {
+  font-weight: 700;
+  font-size: calc(17 / 16 * 1rem);
+  color: var(--very-dark-magenta);
+}
+
+.customer-feedback {
+  margin-top: calc(49 / 16 * 1rem);
+  text-align: left;
+}
+
+.feedback {
+  background-color: var(--very-dark-magenta);
+  color: var(--white);
+  border-radius: 8px;
+  margin-top: 16px;
+  padding: calc(40 / 16 * 1rem) calc(32 / 16 * 1rem) calc(35 / 16 * 1rem);
+}
+
+.feedback__header {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+
+.feedback__profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.feedback__name {
+  font-size: calc(17 / 16 * 1rem);
+}
+
+.feedback__verified-buyer {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: calc(17 / 16 * 1rem);
+  color: var(--soft-pink);
+}
+
+.feedback__comment {
+  margin-top: calc(23 / 16 * 1rem);
+  font-weight: 500;
+  font-size: calc(17 / 16 * 1rem);
+  line-height: calc(22 / 17);
+  letter-spacing: -0.3px;
+
+  &::before {
+    content: "“";
+  }
+
+  &::after {
+    content: "”";
+  }
+}
+
+/* Footer */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* Desktop */
+
+@media (min-width: calc(1380/16*1rem)) {
+  body {
+    text-align: revert;
+    background-image: url("../images/bg-pattern-top-desktop.svg"),
+      url("../images/bg-pattern-bottom-desktop.svg");
+  }
+
+  .main {
+    max-width: revert;
+    padding: calc(118 / 16 * 1rem) calc(165 / 16 * 1rem)
+      calc((100 + 32) / 16 * 1rem);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "testimonials review-items"
+      "feedback-part feedback-part";
+  }
+
+  .testimonials {
+    grid-area: testimonials;
+    margin-right: calc(126 / 16 * 1rem);
+    max-width: 52ch;
+  }
+
+  .testimonial__title {
+    font-size: calc(56 / 16 * 1rem);
+    line-height: calc(48 / 56);
+    letter-spacing: -2px;
+  }
+
+  .testimonial__description {
+    margin-top: calc(18 / 16 * 1rem);
+  }
+
+  .review {
+    grid-area: review-items;
+    align-self: center;
+    margin: 0;
+  }
+
+  .review__item {
+    flex-direction: row;
+    justify-content: center;
+    gap: 32.45px;
+    padding: calc(20 / 16 * 1rem) 0;
+    max-width: calc(445 / 16 * 1rem);
+  }
+
+  .review__item:nth-of-type(1) {
+    margin-top: 0;
+  }
+
+  .review__item:nth-of-type(2) {
+    margin-left: calc(47 / 16 * 1rem);
+  }
+
+  .review__item:nth-of-type(3) {
+    margin-left: calc((2 * 47) / 16 * 1rem);
+  }
+
+  .customer-feedback {
+    grid-area: feedback-part;
+    margin-top: calc(71 / 16 * 1rem);
+    display: flex;
+    gap: 30px;
+  }
+
+  .feedback {
+    margin-top: 0;
+  }
+
+  .feedback:nth-of-type(1) {
+    margin-top: 0;
+  }
+
+  .feedback:nth-of-type(2) {
+    margin-top: 16px;
+    margin-bottom: -16px;
+  }
+
+  /* Add 32px padding to .main class for whole page */
+  .feedback:nth-of-type(3) {
+    margin-top: 32px;
+    margin-bottom: -32px;
+  }
+
+  .feedback__comment {
+    margin-top: 31px;
+  }
+}
