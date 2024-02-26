@@ -165,7 +165,6 @@ body {
 }
 
 .feedback__verified-buyer {
-  display: inline-block;
   margin-top: 4px;
   font-size: calc(17 / 16 * 1rem);
   color: var(--soft-pink);
